@@ -29,12 +29,14 @@ clock = pg.time.Clock()
 all_sprites = pg.sprite.Group()
 enemies = pg.sprite.Group()
 player = Player()
+invader = Mob()
 # testSprite = Sprite()
 # testSprite.image = pg.Surface((50,50))
 # testSprite.image.fill(GREEN)
 # testSprite.rect = testSprite.image.get_rect()
 # testSprite.rect.center = (WIDTH / 2, HEIGHT / 2)
 all_sprites.add(player)
+all_sprites.add(invader)
 # all_sprites.add(testSprite)
 
 # game loop
@@ -49,7 +51,7 @@ while RUNNING:
             RUNNING = False
             # break
     # print(get_mouse_now())
-    ### update section of game loop (if updates take longer twwwwhe 1/30th of a second, you will get laaaaag...)
+    ### update section of game loop (if updates take longer than 1/30th of a second, you will get laaaaag...)
     all_sprites.update()
 
     blocks_hit_list = pg.sprite.spritecollide(player, enemies, True)
